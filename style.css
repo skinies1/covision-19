@@ -1,0 +1,204 @@
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box; 
+
+}
+head{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: red;
+  height: 5rem;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(255, 169, 169);
+
+}
+ฺ
+.bodymap{
+  background-color: white;
+}
+
+i {
+  color:  white;
+}
+
+.wrapper{
+  width: 1040px;
+  margin: 0 auto;
+}
+
+.statistic{
+  display: flex;
+  flex-direction: column;
+
+}
+.box5{
+  margin-top: 1rem;
+  color:  black;
+  text-align: center;
+  text-shadow: 3px 3px 3px #000000,  3px 3px 3px #000000;
+}
+.total_case_box{
+  margin-top: 2rem;
+  padding: 3rem;
+  text-align: center;
+  color: white;
+  border-radius: 15px;
+  background: red;
+  border-right: 5px solid rgb(255, 255, 255);
+}
+
+.box_wrapper{
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 5fr);
+  padding: 0rem;
+  text-align: center;
+  color: white;
+  border-radius: 15px;
+  background: rgb(255, 169, 169);
+}
+
+.box_wrapper2{
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0  rem;
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+    background: rgb(255, 169, 169);
+  }
+.data_map_box{
+  margin-top: 0rem;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 0  rem;
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+    background: rgb(255, 169, 169);
+}
+.box1{
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+  background: rgb(100, 100, 100);
+  border-radius: 15px;
+  border-right: 5px solid rgb(255, 169, 169);
+}
+
+.box2{
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    background: rgb(84, 215, 255);
+    border-radius: 15px;
+    border-left: 5px solid rgb(255, 169, 169);
+  }
+
+.box3{
+
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    background: rgb(255, 114, 114);
+    border-radius: 15px;
+    border-right: 5px solid rgb(255, 169, 169);
+}
+.box4{
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    background: rgb(97, 94, 94);
+    border-radius: 15px;
+    border-left: 5px solid rgb(255, 169, 169);
+}
+
+
+
+.text {
+  padding: 1rem;
+  display: grid;
+  text-align: center;
+  background: rgb(100, 100, 100);
+  border-radius: 15px;
+}
+
+.text2 {
+  padding: 1rem;
+  display: grid;
+  text-align: center;
+  background: rgb(84, 215, 255);
+  border-radius: 15px;
+}
+
+.text3 {
+  padding: 1rem;
+  display: grid;
+  text-align: center;
+  background: rgb(255, 114, 114);
+  border-radius: 15px;
+}
+
+.text4 {
+  padding: 1rem;
+  display: grid;
+  text-align: center;
+  background: rgb(97, 94, 94);
+  border-radius: 15px;
+}
+
+.text5 {
+  padding: 1rem;
+  display: grid;
+  text-align: center;
+  background: rgb(97, 94, 94);
+  border-radius: 15px;
+}
+.ttext0 {
+  padding: 1rem;
+  display: grid;
+  color:black;
+  text-align: center;
+  background: rgb(255, 234, 113);
+  border-right: 2px solid rgb(255, 255, 255);
+  border-left: 2px solid rgb(255, 255, 255);
+}
+.ttext {
+  padding: 1rem;
+  display: grid;
+  text-align: center;
+  background: rgb(245, 58, 58);
+  border-right: 2px solid rgb(255, 255, 255);
+}
+
+
+.ttext2 {
+  padding: 1rem;
+  display: grid;
+  text-align: center;
+  background: rgb(255, 114, 114);
+  border-right: 2px solid rgb(255, 255, 255);
+}
+
+.ttext4 {
+  padding: 1rem;
+  display: grid;
+  text-align: center;
+  background: rgb(97, 94, 94);
+  border-right: 2px solid rgb(255, 255, 255);
+}
+
+.ttext5 {
+  padding: 1rem;
+  display: grid;
+  text-align: center;
+  background: rgb(97, 94, 94);
+  
+}
