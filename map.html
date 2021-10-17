@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width">
     <title>covision-19</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <img src="covid_logo.png"  width="110" height="100">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,20 +16,711 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav" style="font-size: 1.5rem">
-            <a class="nav-item nav-link active" href="file:///D:/covision-19/index.html">Home <span class="sr-only"></span></a>
-            <a class="nav-item nav-link" href="file:///D:/covision-19/map.html">Map</a>
+            <a class="nav-item nav-link" href="file:///D:/covision-19/index.html">Home <span class="sr-only"></span></a>
+            <a class="nav-item nav-link active" href="file:///D:/covision-19/map.html">Map</a>
             <a class="nav-item nav-link" href="#">HexagonMap</a>
             <a class="nav-item nav-link" href="#">ContactUs</a>
           </div>
         </div>
       </nav>
-    
-  </head>
-  <body>
+      <style type="text/css">
+        html {
+          height: 100%;
+        }
+        body {
+          margin: 0px;
+          height: 100%;
+        }
+        #map {
+          height:78%;
+          width: 100%;
+        }
+        </style>
+                <script type="text/javascript" src="https://api.longdo.com/map/?key=784207def121f6d7409241c00d20a54b"></script>
+          </head>
+          
+          <body onload="init();" id="bodymap">
+            
+          <div class="data_map_box">
+                <div class="selectpro1">
+                  <div class="dropdown">
+                    <button class="btn btn-warning btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      กรุณาเลือกจังหวัด(ภาคเหนือ)
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <button class="dropdown-item" id="n1">เชียงราย</button>
+                      <button class="dropdown-item" id="n2">เชียงใหม่</button>
+                      <button class="dropdown-item" id="n3">น่าน</button>
+                      <button class="dropdown-item" id="n4">พะเยา</button>
+                      <button class="dropdown-item" id="n5">แพร่</button>
+                      <buttona class="dropdown-item" id="n6">แม่ฮ่องสอน</buttona>
+                      <button class="dropdown-item" id="n7">ลำปาง</button>
+                      <button class="dropdown-item" id="n8">ลำพูน</button>
+                      <button class="dropdown-item" id="n9">อุตรดิตถ์</button>
+                    </div>
+                  </div>
+                  <div class="dropdown">
+                    <button class="btn btn-warning btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      กรุณาเลือกจังหวัด(ภาคกลาง)
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                      <button class="dropdown-item" id="c1">กำแพงเพชร</button>
+                      <button class="dropdown-item" id="c2">ชัยนาท</button>
+                      <button class="dropdown-item" id="c3">นครนายก</button>
+                      <button class="dropdown-item" id="c4">นครปฐม</button>
+                      <button class="dropdown-item" id="c5">นครสวรรค์</button>
+                      <button class="dropdown-item" id="c6">นนทบุรี</button>
+                      <button class="dropdown-item" id="c7">ปทุมธานี</button>
+                      <button class="dropdown-item" id="c8">พระนครศรีอยุธยา</button>
+                      <button class="dropdown-item" id="c9">พิจิตร</button>
+                      <button class="dropdown-item" id="c10">พิษณุโลก</button>
+                      <button class="dropdown-item" id="c11">เพชรบูรณ์</button>
+                      <button class="dropdown-item" id="c12">ลพบุรี</button>
+                      <button class="dropdown-item" id="c13">สมุทรปราการ</button>
+                      <button class="dropdown-item" id="c14">สมุทรสงคราม</button>
+                      <button class="dropdown-item" id="c15">สมุทรสาคร</button>
+                      <button class="dropdown-item" id="c16">สิงห์บุรี</button>
+                      <button class="dropdown-item" id="c17">สุโขทัย</button>
+                      <button class="dropdown-item" id="c18">สุพรรณบุรี</button>
+                      <button class="dropdown-item" id="c19">สระบุรี</button>
+                      <button class="dropdown-item" id="c20">อ่างทอง</button>
+                      <button class="dropdown-item" id="c21">อุทัยธานี</button> 
+                    </div>
+                  </div>
+                  <div class="dropdown">
+                    <button class="btn btn-warning btn-sm dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      กรุณาเลือกจังหวัด(ภาคใต้)
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                      <button class="dropdown-item" id="s1">กระบี่</button>
+                      <button class="dropdown-item" id="s2">ชุมพร</button>
+                      <button class="dropdown-item" id="s3">ตรัง</button>
+                      <button class="dropdown-item" id="s4">นครศรีธรรมราช</button> 
+                      <button class="dropdown-item" id="s5">นราธิวาส</button>
+                      <button class="dropdown-item" id="s6">ปัตตานี</button>
+                      <button class="dropdown-item" id="s7">พังงา</button>
+                      <button class="dropdown-item" id="s8">พัทลุง</button>
+                      <button class="dropdown-item" id="s9">ภูเก็ต</button>
+                      <button class="dropdown-item" id="s10">ระนอง</button>
+                      <button class="dropdown-item" id="s11">สตูล</button>
+                      <button class="dropdown-item" id="s12">สงขลา</button>
+                      <button class="dropdown-item" id="s13">สุราษฎร์ธานี</button>
+                      <button class="dropdown-item" id="s14">ยะลา</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="selectpro2">
+                  <div class="dropdown">
+                    <button class="btn btn-warning btn-sm dropdown-toggle" type="button" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      กรุณาเลือกจังหวัด(ภาคตะวันออก)
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
+                      <button class="dropdown-item" id="e1">จันทบุรี</button>
+                      <button class="dropdown-item" id="e2">ฉะเชิงเทรา</button>
+                      <button class="dropdown-item" id="e3">ชลบุรี</button>
+                      <button class="dropdown-item" id="e4">ตราด</button>
+                      <button class="dropdown-item" id="e5">ปราจีนบุรี</button>
+                      <button class="dropdown-item" id="e6">ระยอง</button>
+                      <button class="dropdown-item" id="e7">สระแก้ว</button>
+                    </div>
+                  </div>
+                    <div class="dropdown">
+                    <button class="btn btn-warning btn-sm dropdown-toggle" type="button" id="dropdownMenuButton5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      กรุณาเลือกจังหวัด(ภาคตะวันตก)
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton5">
+                      <button class="dropdown-item" id="w1">กาญจนบุรี</button>
+                      <button class="dropdown-item" id="w2">ตาก</button>
+                      <button class="dropdown-item" id="w3">ประจวบคีรีขันธ์</button>
+                      <button class="dropdown-item" id="w4">เพชรบุรี</button>
+                      <button class="dropdown-item" id="w5">ราชบุรี</button>
+                    </div>
+                  </div>
+                    <div class="dropdown">
+                    <button class="btn btn-warning btn-sm dropdown-toggle" type="button" id="dropdownMenuButton6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      กรุณาเลือกจังหวัด(ภาคตะวันออกเฉียงเหนือ)
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton6">
+                      <button class="dropdown-item" id="ne1">กาฬสินธุ์</button>
+                      <button class="dropdown-item" id="ne2">ขอนแก่น</button>
+                      <button class="dropdown-item" id="ne3">ชัยภูมิ</button>
+                      <button class="dropdown-item" id="ne4">นครพนม</button>
+                      <button class="dropdown-item" id="ne5">นครราชสีมา</button> 
+                      <button class="dropdown-item" id="ne6">บึงกาฬ</button>
+                      <button class="dropdown-item" id="ne7">บุรีรัมย์</button>
+                      <button class="dropdown-item" id="ne8">มหาสารคาม</button>
+                      <button class="dropdown-item" id="ne9">มุกดาหาร</button>
+                      <button class="dropdown-item" id="ne10">ยโสธร</button>
+                      <button class="dropdown-item" id="ne11">ร้อยเอ็ด</button>
+                      <button class="dropdown-item" id="ne12">เลย</button>
+                      <button class="dropdown-item" id="ne13">สกลนคร</button>
+                      <button class="dropdown-item" id="ne14">สุรินทร์</button>
+                      <button class="dropdown-item" id="ne15">ศรีสะเกษ</button>
+                      <button class="dropdown-item" id="ne16">หนองคาย</button>
+                      <button class="dropdown-item" id="ne17">หนองบัวลำภู</button>
+                      <button class="dropdown-item" id="ne18">อุดรธานี</button>
+                      <button class="dropdown-item" id="ne19">อุบลราชธานี</button>
+                      <button class="dropdown-item" id="ne20">อำนาจเจริญ</button>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="data0">
+                    <div class="ttext0">
+                      <h6>
+                          Province
+                      </h6>
+                      <p style="font-size: 1rem;" id ="province">test</p>
+                    </div>
+                  </div>
+                <div class="data1">
+                  <div class="ttext">
+                    <h6>
+                      Total Case
+                    </h6>
+                    <p style="font-size: 1rem;" id ="total_case">test</p>
+                  </div>
+                </div>
 
+                <div class="data2">
+                    <div class="ttext2">
+                  <h6>
+                    New Case
+                  </h6>
+                  <p style="font-size: 1rem;" id="new_case">test</p>
+                </div>
+            </div>
+                  <div class="data4">
+                    <div class="ttext4">
+                    <h6>
+                      Total Death
+                    </h6>
+                    <p style="font-size: 1rem;" id="total_death">test</p>
+                  </div>
+                </div>
+                  <div class="data5">
+                    <div class="ttext5">
+                    <h6>
+                      New Death
+                    </h6>
+                    <p style="font-size: 1rem;" id="new_death">test</p>
+                  </div>
+                </div>
+            </div>
+              </div>
+            <script>
+                var i = 1;
+                var lati ,longi;
+                var provinceValue = "กรุงเทพมหานคร"
+                let province = document.getElementById("province");
+                let new_cases = document.getElementById("new_case");
+                let new_death = document.getElementById("new_death");
+                let total_death = document.getElementById("total_death");
+                let total_recovered = document.getElementById("total_recovered");
+                let total_cases = document.getElementById("total_case");
 
+                const n1 = document.getElementById("n1");
+                const n2 = document.getElementById("n2");
+                const n3 = document.getElementById("n3");
+                const n4 = document.getElementById("n4");
+                const n5 = document.getElementById("n5");
+                const n6 = document.getElementById("n6");
+                const n7 = document.getElementById("n7");
+                const n8 = document.getElementById("n8");
+                const n9 = document.getElementById("n9");
 
+                const c1 = document.getElementById("c1");
+                const c2 = document.getElementById("c2");
+                const c3 = document.getElementById("c3");
+                const c4 = document.getElementById("c4");
+                const c5 = document.getElementById("c5");
+                const c6 = document.getElementById("c6");
+                const c7 = document.getElementById("c7");
+                const c8 = document.getElementById("c8");
+                const c9 = document.getElementById("c9");
+                const c10 = document.getElementById("c10");
+                const c11 = document.getElementById("c11");
+                const c12 = document.getElementById("c12");
+                const c13 = document.getElementById("c13");
+                const c14 = document.getElementById("c14");
+                const c15 = document.getElementById("c15");
+                const c16 = document.getElementById("c16");
+                const c17 = document.getElementById("c17");
+                const c18 = document.getElementById("c18");
+                const c19 = document.getElementById("c19");
+                const c20 = document.getElementById("c20");
+                const c21 = document.getElementById("c21");
 
+                const s1 = document.getElementById("s1");
+                const s2 = document.getElementById("s2");
+                const s3 = document.getElementById("s3");
+                const s4 = document.getElementById("s4");
+                const s5 = document.getElementById("s5");
+                const s6 = document.getElementById("s6");
+                const s7 = document.getElementById("s7");
+                const s8 = document.getElementById("s8");
+                const s9 = document.getElementById("s9");
+                const s10 = document.getElementById("s10");
+                const s11 = document.getElementById("s11");
+                const s12 = document.getElementById("s12");
+                const s13 = document.getElementById("s13");
+                const s14 = document.getElementById("s14");
 
-  </body>
-</html>
+                const e1 = document.getElementById("e1");
+                const e2 = document.getElementById("e2");
+                const e3 = document.getElementById("e3");
+                const e4 = document.getElementById("e4");
+                const e5 = document.getElementById("e5");
+                const e6 = document.getElementById("e6");
+                const e7 = document.getElementById("e7");
+
+                const w1 = document.getElementById("w1");
+                const w2 = document.getElementById("w2");
+                const w3 = document.getElementById("w3");
+                const w4 = document.getElementById("w4");
+                const w5 = document.getElementById("w5");
+
+                const ne1 = document.getElementById("ne1");
+                const ne2 = document.getElementById("ne2");
+                const ne3 = document.getElementById("ne3");
+                const ne4 = document.getElementById("ne4");
+                const ne5 = document.getElementById("ne5");
+                const ne6 = document.getElementById("ne6");
+                const ne7 = document.getElementById("ne7");
+                const ne8 = document.getElementById("ne8");
+                const ne9 = document.getElementById("ne9");
+                const ne10 = document.getElementById("ne10");
+                const ne11 = document.getElementById("ne11");
+                const ne12 = document.getElementById("ne12");
+                const ne13 = document.getElementById("ne13");
+                const ne14 = document.getElementById("ne14");
+                const ne15 = document.getElementById("ne15");
+                const ne16 = document.getElementById("ne16");
+                const ne17 = document.getElementById("ne17");
+                const ne18 = document.getElementById("ne18");
+                const ne19 = document.getElementById("ne19");
+                const ne20 = document.getElementById("ne20");
+                
+
+                function init() {
+                    var map = new longdo.Map({
+                      placeholder: document.getElementById('map'),
+                      zoom:6,
+                      lastview: false
+                    });
+                    map.Layers.setBase(longdo.Layers.POLITICAL);
+                    map.language('th');
+                  }
+                
+                async function getUser(){
+                    let response = await fetch('https://covid19.ddc.moph.go.th/api/Cases/today-cases-by-provinces');
+                    console.log(response);
+                    let data = await response.json();
+                    
+                    data.forEach(val => {
+                        
+                        if(val.province == provinceValue){
+                            province.innerHTML = val.province;
+                            new_cases.innerHTML = val.new_case;
+                            new_death.innerHTML = val.new_death;
+                            total_death.innerHTML = val.total_death;
+                            total_cases.innerHTML = val.total_case;
+                        }
+                    });
+                
+                    return data;
+                }
+                getUser().then(data => console.log(data));
+
+                n1.addEventListener("click", ()=>{
+                    provinceValue = n1.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                n2.addEventListener("click", ()=>{
+                    provinceValue = n2.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                n3.addEventListener("click", ()=>{
+                    provinceValue = n3.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                n4.addEventListener("click", ()=>{
+                    provinceValue = n4.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                n5.addEventListener("click", ()=>{
+                    provinceValue = n5.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                n6.addEventListener("click", ()=>{
+                    provinceValue = n6.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                n7.addEventListener("click", ()=>{
+                    provinceValue = n7.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                n8.addEventListener("click", ()=>{
+                    provinceValue = n8.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                n9.addEventListener("click", ()=>{
+                    provinceValue = n9.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+               
+                c1.addEventListener("click", ()=>{
+                    provinceValue = c1.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                c2.addEventListener("click", ()=>{
+                    provinceValue = c2.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                c3.addEventListener("click", ()=>{
+                    provinceValue = c3.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                c4.addEventListener("click", ()=>{
+                    provinceValue = c4.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                c5.addEventListener("click", ()=>{
+                    provinceValue = c5.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                c6.addEventListener("click", ()=>{
+                    provinceValue = c6.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                c7.addEventListener("click", ()=>{
+                    provinceValue = c7.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                c8.addEventListener("click", ()=>{
+                    provinceValue = c8.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                c9.addEventListener("click", ()=>{
+                    provinceValue = c9.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                c10.addEventListener("click", ()=>{
+                    provinceValue = c10.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                c11.addEventListener("click", ()=>{
+                    provinceValue = c11.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                c12.addEventListener("click", ()=>{
+                    provinceValue = c12.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                c13.addEventListener("click", ()=>{
+                    provinceValue = c13.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                c14.addEventListener("click", ()=>{
+                    provinceValue = c14.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                c15.addEventListener("click", ()=>{
+                    provinceValue = c15.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                c16.addEventListener("click", ()=>{
+                    provinceValue = c16.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                c17.addEventListener("click", ()=>{
+                    provinceValue = c17.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                c18.addEventListener("click", ()=>{
+                    provinceValue = c18.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                c19.addEventListener("click", ()=>{
+                    provinceValue = c19.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                c20.addEventListener("click", ()=>{
+                    provinceValue = c20.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                c21.addEventListener("click", ()=>{
+                    provinceValue = c21.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+
+                s1.addEventListener("click", ()=>{
+                    provinceValue = s1.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                s2.addEventListener("click", ()=>{
+                    provinceValue = s2.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                s3.addEventListener("click", ()=>{
+                    provinceValue = s3.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                s4.addEventListener("click", ()=>{
+                    provinceValue = s4.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                s5.addEventListener("click", ()=>{
+                    provinceValue = s5.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                s6.addEventListener("click", ()=>{
+                    provinceValue = s6.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                s7.addEventListener("click", ()=>{
+                    provinceValue = s7.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                s8.addEventListener("click", ()=>{
+                    provinceValue = s8.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                s9.addEventListener("click", ()=>{
+                    provinceValue = s9.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                s10.addEventListener("click", ()=>{
+                    provinceValue = s10.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                s11.addEventListener("click", ()=>{
+                    provinceValue = s11.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                s12.addEventListener("click", ()=>{
+                    provinceValue = s12.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                s13.addEventListener("click", ()=>{
+                    provinceValue = s13.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                s14.addEventListener("click", ()=>{
+                    provinceValue = s14.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+
+                e1.addEventListener("click", ()=>{
+                    provinceValue = e1.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                e2.addEventListener("click", ()=>{
+                    provinceValue = e2.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                e3.addEventListener("click", ()=>{
+                    provinceValue = e3.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                e4.addEventListener("click", ()=>{
+                    provinceValue = e4.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                e5.addEventListener("click", ()=>{
+                    provinceValue = e5.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                e6.addEventListener("click", ()=>{
+                    provinceValue = e6.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                e7.addEventListener("click", ()=>{
+                    provinceValue = e7.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+
+                w1.addEventListener("click", ()=>{
+                    provinceValue = w1.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                w2.addEventListener("click", ()=>{
+                    provinceValue = w2.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                w3.addEventListener("click", ()=>{
+                    provinceValue = w3.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                w4.addEventListener("click", ()=>{
+                    provinceValue = w4.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                w5.addEventListener("click", ()=>{
+                    provinceValue = w5.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+
+                ne1.addEventListener("click", ()=>{
+                    provinceValue = ne1.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                ne2.addEventListener("click", ()=>{
+                    provinceValue = ne2.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                ne3.addEventListener("click", ()=>{
+                    provinceValue = ne3.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                ne4.addEventListener("click", ()=>{
+                    provinceValue = ne4.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                ne5.addEventListener("click", ()=>{
+                    provinceValue = ne5.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                ne6.addEventListener("click", ()=>{
+                    provinceValue = ne6.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                ne7.addEventListener("click", ()=>{
+                    provinceValue = ne7.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                ne8.addEventListener("click", ()=>{
+                    provinceValue = ne8.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                ne9.addEventListener("click", ()=>{
+                    provinceValue = ne9.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                ne10.addEventListener("click", ()=>{
+                    provinceValue = ne10.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                ne11.addEventListener("click", ()=>{
+                    provinceValue = ne11.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                ne12.addEventListener("click", ()=>{
+                    provinceValue = ne12.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                ne13.addEventListener("click", ()=>{
+                    provinceValue = ne13.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                ne14.addEventListener("click", ()=>{
+                    provinceValue = ne14.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                ne15.addEventListener("click", ()=>{
+                    provinceValue = ne15.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                ne16.addEventListener("click", ()=>{
+                    provinceValue = ne16.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                ne17.addEventListener("click", ()=>{
+                    provinceValue = ne17.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                ne18.addEventListener("click", ()=>{
+                    provinceValue = ne18.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                ne19.addEventListener("click", ()=>{
+                    provinceValue = ne19.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+                ne20.addEventListener("click", ()=>{
+                    provinceValue = ne20.innerText;
+                    alert(provinceValue)
+                    getUser().then(data => console.log(data));  
+                });
+        
+        
+        
+            </script>
+           
+              <div id="map"></div> 
+          </body>
+        </html>
